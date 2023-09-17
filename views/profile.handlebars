@@ -1,0 +1,44 @@
+<div>
+    <div>
+        <h2>Welcome, {{username}}</h2>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Create a New Blog</h3>
+
+        <form class="form new-project-form">
+            <div>
+                <label for="blog-title">Blog title:</label>
+                <input type="text" id="blog-title" />
+            </div>
+            <div>
+                <label for="blog-content">Content:</label>
+                <input type="text" id="blog-content" />
+            </div>
+            <div>
+                <button type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+
+    {{#if blogs.length}}
+    <div class="project-list">
+        <h3>Blogs:</h3>
+
+        {{#each blogs as |blog|}}
+        <div>
+            <div>
+                <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+            </div>
+            <div>
+                <button data-id="{{blog.id}}">Delete</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script src="../public//js/profile.js"></script>
