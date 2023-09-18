@@ -2,6 +2,18 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Testing to try and get /api/blogs
+router.get('/blogs', withAuth, async (req, res) => {
+    try {
+        const blogData = await Blog.findAll();
+
+        res.status(200).json(blogData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+// Create new blog
 router.post('/', withAuth, async (req, res) => {
     try {
         const newBlog = await Blog.create({
@@ -17,6 +29,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+// Update blog post
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const updateBlog = await Blog.update({
@@ -35,6 +48,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 
+// Delete blog post
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.destroy({

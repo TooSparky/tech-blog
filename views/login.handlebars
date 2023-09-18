@@ -1,38 +1,58 @@
 <div>
-    <div>
+    <div class="login-div">
         <h2>Login</h2>
-
         <form class="form login-form">
-            <div>
-                <label for="username-login">Username:</label>
-                <input type="text" id="username-login" />
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+                <input type="text" id="username-login" class="form-control" />
+                <label class="form-label" for="form2Example1">Username</label>
             </div>
-            <div>
-                <label for="password-login">Password:</label>
-                <input type="password" id="password-login" />
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input type="password" id="password-login" class="form-control" />
+                <label class="form-label" for="form2Example2">Password</label>
             </div>
-            <div>
-                <button type="submit">Login</button>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+            <!-- Register buttons -->
+            <div class="text-center">
+                <p>Not a logged in? <a href="/signup">Sign up</a></p>
             </div>
         </form>
     </div>
-    <div>
-        <h2>Signup</h2>
 
+    <div class="signup-div">
+        <h2>Sign up</h2>
         <form class="form signup-form">
-            <div>
-                <label for="username-signup">Username:</label>
-                <input type="text" id="username-signup" />
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+                <input type="text" id="username-login" class="form-control" />
+                <label class="form-label" for="form2Example1">Username</label>
             </div>
-            <div>
-                <label for="password-signup">Password:</label>
-                <input type="password" id="password-signup" />
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input type="password" id="password-login" class="form-control" />
+                <label class="form-label" for="form2Example2">Password</label>
             </div>
-            <div>
-                <button type="submit">Signup</button>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                </div>
             </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
         </form>
     </div>
 </div>
-
-<script src="../public/js/login.js"></script>
