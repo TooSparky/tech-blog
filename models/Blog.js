@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const { v4: uuidv4 } = require('uuid');
 
 class Blog extends Model {}
 
@@ -20,7 +21,7 @@ Blog.init(
             allowNull: false,
         },
         user_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUIDV4,
             references: {
                 model: 'user',
                 key: 'id',

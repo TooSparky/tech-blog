@@ -2,10 +2,14 @@ const router = require('express').Router();
 const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// WORKS!
 // Get all blogs
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
-        const blogData = await Blog.findAll();
+        const blogData = await Blog.findAll({
+            title: req.body.title,
+            content: req.body.content,
+        });
 
         if(!blogData) {
             res.status(400).json({ message: 'Sorry, could not find blog data' });
@@ -17,13 +21,13 @@ router.get('/', async (req, res) => {
     }
 });
 
+// WORKS!
 // Create new blog
 router.post('/', withAuth, async (req, res) => {
     try {
         const newBlog = await Blog.create({
             title: req.body.title,
             content: req.body.content,
-            user_id: req.body.user_id,
         });
 
         res.status(200).json(newBlog);
@@ -32,6 +36,7 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+// WORKS!
 // Update blog post
 router.put('/:id', withAuth, async (req, res) => {
     try {
@@ -51,6 +56,7 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 
+// WORKS!
 // Delete blog post
 router.delete('/:id', withAuth, async (req, res) => {
     try {

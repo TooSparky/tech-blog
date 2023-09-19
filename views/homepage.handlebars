@@ -1,20 +1,8 @@
-<div>
-    <div>
-        <div>
-            {{#each blogs as |blog|}}
-            <h2>
-                <a href="/blog/{{blog.id}}">{{blog.title}}</a>
-            </h2>
-            <p>
-                {{blog.content}}
-            </p>
-            <p>Created by {{blog.username}} on {{format_amount blog.date_created}}</p>
-            {{/each}}
-        </div>
-        <div>
-            <p>
-        
-            </p>
-        </div>
+<div class="container text-center">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        {{#each blogs as |blog|}}
+        <div class="col">{{blog.title}}</div>
+        <div class="row">{{blog.content}}</div>
+        <div class="row"><a href="/">Comment</a></div>
     </div>
 </div>

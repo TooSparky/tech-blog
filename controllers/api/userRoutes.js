@@ -1,23 +1,20 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// Create new user
-router.post('/', async (req, res) => {
+// to load login page
+router.get('/', async (req, res) => {
     try {
-        const userData = await User.create(req.body);
-
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.logged_in = true;
-
-            res.status(200).json(userData);
+        res.render("login", {
+            logged_in: req.session.logged_in
         });
+
     } catch (err) {
         res.status(400).json(err);
     }
 });
 
-// Handles /login
+// WORKS! after sign-in, login works
+// Find username /login
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: {username: req.body.username } });
@@ -45,23 +42,14 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// router.get('/signup', async (req, res) => {
-//     try {
-//         const userData = await User.
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
-// })
-
-// Handles /signup
+// WORKS! reutrns username and hashed password
+// Create new user /signup
 router.post('/signup', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: {username: req.body.username } });
-
-        if (!userData) {
-            res.status(400).json({ message: 'Oops, something went wrong, please try again' });
-            return;
-        }
+        const userData = await User.create({
+            username: req.body.username,
+            password: req.body.password,
+        });
 
         const validPassword = await userData.checkPassword(req.body.password);
 
@@ -75,17 +63,20 @@ router.post('/signup', async (req, res) => {
 
             res.json({ user: userData, message: 'You are now signed in!' });
         });
+
     } catch (err) {
         res.status(400).json(err);
     }
 });
 
+// ERROR but program ends... maybe works
 // Handles /logout
 router.post('/logout', async (req, res) => {
     if (req.session.logged_in) {
         res.session.destroy(() => {
             res.status(204).end();
         });
+
     } else {
         res.status(404).end();
     }
