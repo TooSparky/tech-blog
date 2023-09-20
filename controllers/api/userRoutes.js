@@ -2,16 +2,16 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // to load login page
-router.get('/', async (req, res) => {
-    try {
-        res.render("login", {
-            logged_in: req.session.logged_in
-        });
+// router.get('/login', async (req, res) => {
+//     try {
+//         res.render("login", {
+//             logged_in: req.session.logged_in
+//         });
 
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// });
 
 // WORKS! after sign-in, login works
 // Find username /login
