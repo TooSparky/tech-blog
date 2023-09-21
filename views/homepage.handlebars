@@ -2,15 +2,17 @@
     <div class="container text-center">
         <h2>Blog Posts</h2>
         <div class="col">
+            {{#each blogs as |blog|}}
             <div class="title">
-                {{blogs.title}}
+                {{blog.title}}
             </div>
             <div class="content">
-                {{blogs.content}}
+                {{blog.content}}
             </div>
             {{!-- <div class="date">
                 Created on {{format_date blogs.date_created}}
             </div> --}}
+            {{/each}}
             <div class="comment">
                 <button class="comment-post" id="comment-post" type="submit" name="{{blog.id}}"><a href="/comments"></a>Comment</button>
             </div>

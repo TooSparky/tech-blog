@@ -1,9 +1,15 @@
 <div class="container text-center">
     <h2>Your Dashboard</h2>
     <div class="row align-items-start">
+        {{#each blogs as |blog|}}
+        <div class="col existing-post">
+            {{blog.title}}
+            {{blog.content}}
+        </div>
+        {{/each}}
+        <div class="spacing"></div>
         <div class="col new-post">
             <a class="btn btn-primary" href="/dashboard/post">New Post</a>
-            {{!-- <button class="btn btn-primary hide" id="new-post" type="submit"><a href="/dashboard-post"></a>New Post</button> --}}
         </div>
     </div>
 </div>

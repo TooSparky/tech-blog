@@ -1,12 +1,14 @@
 <div>
     <div class="container text-center">
         <h2>Your Dashboard</h2>
-        <div class="col">
+        <form class="col dashboard-post">
             <div class="title">
-                <textarea name="title" id="post-title" cols="170" rows="1" placeholder="Title"></textarea>
+                <input type="text" id="post-title" class="form-control" placeholder="Title"/>
+                <label class="form-label"></label>
             </div>
             <div class="content">
-                <textarea name="content" id="post-content" cols="170" rows="5" placeholder="Content"></textarea>
+                <input type="text" id="post-content" class="form-control" placeholder="Content"/>
+                <label class="form-label"></label>
             </div>
             <div class="create">
                 <button class="create-post" id="create-post" type="submit">Create</button>
@@ -17,8 +19,8 @@
             <div class="delete">
                 <button class="delete-post" id="delete-post" type="submit" data-id="{{blog.id}}">Delete</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
-<script src="/js/profile.js"></script>
+<script src="/js/blog.js"></script>
