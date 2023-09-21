@@ -10,7 +10,9 @@ To install this project, simply go to the proper link or type in the URL, since 
 
 ## Usage
 
-<!-- Link / screenshots and instructions here -->
+![navbar screenshot](assets/navbar-screenshot-tech-blog.png)
+
+Navigate through the application with the easy to use navbar.
 
 ## Credits
 

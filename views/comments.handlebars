@@ -1,0 +1,24 @@
+<div>
+    <div class="container text-center">
+        <h2>Blog Posts</h2>
+        <div class="col">
+            <div class="title">
+                {{blog.title}}
+            </div>
+            <div class="content">
+                {{blog.content}}
+            </div>
+            <div class="date">
+                {{format_date}}
+            </div>
+            <div>
+                Posted by: {{users.username}}
+            </div>
+            <div class="comment">
+                <button class="comment-post" id="comment-post" type="submit" name="{{blog.id}}">Comment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/profile.js"></script>

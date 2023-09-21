@@ -1,19 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// to load login page
-// router.get('/login', async (req, res) => {
-//     try {
-//         res.render("login", {
-//             logged_in: req.session.logged_in
-//         });
-
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
-// });
-
-// WORKS! after sign-in, login works
 // Find username /login
 router.post('/login', async (req, res) => {
     try {
@@ -42,7 +29,6 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// WORKS! reutrns username and hashed password
 // Create new user /signup
 router.post('/signup', async (req, res) => {
     try {
@@ -69,7 +55,7 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-// ERROR but program ends... maybe works
+// ERROR cannot read properties of undefined ('destroy')
 // Handles /logout
 router.post('/logout', async (req, res) => {
     if (req.session.logged_in) {
