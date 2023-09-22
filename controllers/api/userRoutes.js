@@ -55,11 +55,10 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-// ERROR cannot read properties of undefined ('destroy')
 // Handles /logout
 router.post('/logout', async (req, res) => {
     if (req.session.logged_in) {
-        res.session.destroy(() => {
+        req.session.destroy(() => {
             res.status(204).end();
         });
 

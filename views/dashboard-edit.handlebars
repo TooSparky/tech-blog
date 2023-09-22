@@ -1,0 +1,27 @@
+<div>
+    <div class="container text-center">
+        <h2>Your Dashboard</h2>
+        <form class="col">
+            {{#each blogs as |blog|}}
+            <div class="title">
+                {{blog.title}}
+                <input type="text" id="post-title" class="form-control"/>
+                <label class="form-label"></label>
+            </div>
+            <div class="content">
+                {{blog.content}}
+                <input type="text" id="post-content" class="form-control"/>
+                <label class="form-label"></label>
+            </div>
+            <div class="update">
+                <button class="update-post" id="update-post" type="submit" data-id="{{blog.id}}">Update</button>
+            </div>
+            <div class="delete">
+                <button class="delete-post" id="delete-post" type="submit" data-id="{{blog.id}}">Delete</button>
+            </div>
+            {{/each}}
+        </form>
+    </div>
+</div>
+
+<script src="/js/edit.js"></script>

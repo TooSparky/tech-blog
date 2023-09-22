@@ -12,7 +12,7 @@ To install this project, simply go to the proper link or type in the URL, since 
 
 ![navbar screenshot](assets/navbar-screenshot-tech-blog.png)
 
-Navigate through the application with the easy to use navbar.
+Navigate through the application with the easy to use navbar. Unfortunately, based on time constraints, the comments do not work, and the update/delete features are limited to only the top post.
 
 ## Credits
 

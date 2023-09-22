@@ -1,3 +1,4 @@
+// Handles blog data
 const blogFormHandler = async (event) => {
     event.preventDefault();
 
@@ -19,20 +20,4 @@ const blogFormHandler = async (event) => {
     }
 };
 
-const updateBlog = async (event) => {
-    event.preventDefault();
-
-    const update = document.getElementById('update-post');
-
-    const response = await fetch(`/api/blogs${id}`, {
-        method: 'PUT',
-    });
-
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert('Failed to update blog post!');
-    }
-}
-
-document.querySelector('.dashboard-post').addEventListener('submit', blogFormHandler);
+document.querySelector('.dashboard-post').addEventListener('click', blogFormHandler);

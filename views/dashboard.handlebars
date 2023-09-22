@@ -1,17 +1,14 @@
 <div class="container text-center">
     <h2>Your Dashboard</h2>
     <div class="row align-items-start">
-        {{#each blogs as |blog|}}
-        <div class="col existing-post">
-            {{blog.title}}
-            {{blog.content}}
+        <div class="spacing">
+
         </div>
-        {{/each}}
-        <div class="spacing"></div>
         <div class="col new-post">
             <a class="btn btn-primary" href="/dashboard/post">New Post</a>
         </div>
+        <div class="col view-post">
+            <a class="btn btn-primary" href="/dashboard/edit">Edit Posts</a>
+        </div>
     </div>
 </div>
-
-<script src="/js/profile.js"></script>

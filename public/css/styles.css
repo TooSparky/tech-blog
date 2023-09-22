@@ -1,21 +1,16 @@
-.secret {
-    visibility: hidden;
-}
-
-.show {
-    visibility: visible;
-}
-
 .title {
     border: 2px solid black;
     height: 5vh;
     background-color: #fff;
+    margin-top: 1rem;
+    background-color: burlywood;
 }
 
 .content {
     border: 2px solid black;
     height: 15vh;
     background-color: #fff;
+    margin-bottom: 1rem;
 }
 
 .create-post {
@@ -32,7 +27,6 @@
     height: 5vh;
     width: 100%;
     border-radius: 5px;
-    margin: 1rem 0;
     background-color:lightskyblue;
 }
 
@@ -41,7 +35,7 @@
     height: 5vh;
     width: 100%;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     background-color:lightcoral;
 }
 
@@ -50,16 +44,12 @@
     height: 5vh;
     width: 100%;
     border-radius: 5px;
-    margin-top: 1rem;
+    margin-bottom: 3rem;
     background-color:lightskyblue;
 }
 
 .spacing {
     margin: 1rem 0;
-}
-
-textarea {
-    border: none;
 }
 
 body {
